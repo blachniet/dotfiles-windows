@@ -1,3 +1,7 @@
+########################################
+# Aliases
+########################################
+Set-Alias dockerm "C:\Program Files\Docker Toolbox\docker-machine.exe"
 
 ########################################
 # Functions

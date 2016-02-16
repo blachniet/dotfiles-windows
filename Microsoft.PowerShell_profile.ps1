@@ -1,3 +1,8 @@
+########################################
+# Aliases
+########################################
+Set-Alias sublime 'C:\Program Files\Sublime Text 3\sublime.exe'
+Set-Alias subl 'C:\Program Files\Sublime Text 3\subl.exe'
 
 ########################################
 # Functions

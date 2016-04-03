@@ -20,6 +20,7 @@ Pop-Location
 
 $env:GOPATH = "$HOME/Developer/Go"
 $env:PATH += ";$env:GOPATH/bin"
+$env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"
 
 ########################################
 # posh-git

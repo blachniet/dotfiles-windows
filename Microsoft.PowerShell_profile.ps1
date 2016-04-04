@@ -3,6 +3,7 @@
 ########################################
 Set-Alias dockerc   'C:\Program Files\Docker Toolbox\docker-compose.exe'
 Set-Alias dockerm   'C:\Program Files\Docker Toolbox\docker-machine.exe'
+Set-Alias ssh-add   'C:\Program Files\Git\usr\bin\ssh-add.exe'
 Set-Alias ssh-agent 'C:\Program Files\Git\usr\bin\ssh-agent.exe'
 Set-Alias subl      'C:\Program Files\Sublime Text 3\subl.exe'
 Set-Alias sublime   'C:\Program Files\Sublime Text 3\sublime_text.exe'

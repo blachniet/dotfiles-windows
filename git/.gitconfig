@@ -1,11 +1,11 @@
 [user]
 	name = Brian Lachniet
-	email = blachniet@gmail.com
 [alias]
 	s = status --short
 	co = checkout
 	b = branch
 	lo = log --oneline --decorate --graph
+	diffy = difftool --dir-diff
 
 [push]
 	default = simple

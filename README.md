@@ -4,7 +4,6 @@
 
 - [PowerShell Gallery module](https://www.powershellgallery.com/)
   if before Windows 10
-- [Atom](https://atom.io/)
 - Visual Studio
 - VMWare Workstation
 - [Docker Toolbox](https://www.docker.com/docker-toolbox)

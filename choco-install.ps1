@@ -16,7 +16,6 @@ choco install hxd -y
 choco install malwarebytes -y
 choco install nodejs -y
 choco install python2 -y
-choco install spf13-vim -y
 choco install sqlite -y
 choco install sqlitebrowser -y
 choco install vagrant -y

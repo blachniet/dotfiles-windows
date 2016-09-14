@@ -33,10 +33,8 @@ ls $pkgPath | % {
     $destPath = Join-Path $Target $_.Name
     Write-Debug $destPath
     if ($_.PSIsContainer){
-        Write-Host "cmd /c mklink /J `"$($_.Name)`" `"$($_.FullName)`""
         iex "cmd /c mklink /J `"$destPath`" `"$($_.FullName)`""
     } else {
-        Write-Host "cmd /c mklink /H `"$($_.Name)`" `"$($_.FullName)`""
         iex "cmd /c mklink /H `"$destPath`" `"$($_.FullName)`""
     }
 }

@@ -1,0 +1,8 @@
+set incsearch			" Show next match while entering search
+set hlsearch			" Highlight search matches
+set ignorecase			" Ignore case in searches
+set smartcase			" Respect case when capital letters present
+set backspace=indent,eol,start	" Allow backspace over new lines
+
+let mapleader=","
+inoremap jk <ESC>		" Map jk to ESC

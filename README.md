@@ -1,15 +1,8 @@
 # Brian's Windows dotfiles
 
-## Manual Installs
-
-- [PowerShell Gallery module](https://www.powershellgallery.com/)
-  if before Windows 10
-- [Atom](https://atom.io/)
-- Visual Studio
-- VMWare Workstation
-- [Docker Toolbox](https://www.docker.com/docker-toolbox)
-
-## Install
-
-1. Review contents of the install files, comment out anything you don't want
-2. `PS> .\install.ps1`
+    PS> cd ~/
+    PS> git clone https://github.com/blachniet/dotfiles-windows.git
+    PS> cd dotfiles-windows
+    PS> ./stow.ps1 PowerShell
+    PS> ./stow.ps1 git
+    PS> ./stow.ps1 vim

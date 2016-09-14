@@ -10,6 +10,7 @@ Set-Alias subl 'C:\Program Files\Sublime Text 3\subl.exe'
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
 function touch($file) { "" | Out-File $file -Encoding ASCII }
 function mklink { cmd /c mklink $args }
+function rmrf($path) { rm -Recurse -Force $path }
 
 Push-Location (Split-Path -Parent $PROFILE)
 "extras" | ? {Test-Path "$_.ps1"} | % { iex ". .\$_.ps1"}

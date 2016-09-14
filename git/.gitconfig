@@ -1,5 +1,10 @@
 [user]
 	name = Brian Lachniet
+
+[core]
+	autocrlf = true
+	editor = 'C:/Program Files (x86)/Vim/vim80/vim.exe'
+
 [alias]
 	s = status --short
 	co = checkout
@@ -9,3 +14,7 @@
 
 [push]
 	default = simple
+[diff]
+	tool = bc3
+[difftool "bc3"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe

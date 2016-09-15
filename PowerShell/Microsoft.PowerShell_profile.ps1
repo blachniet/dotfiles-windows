@@ -5,7 +5,7 @@ Set-Alias dockerc   "$env:ProgramFiles\Docker Toolbox\docker-compose.exe"
 Set-Alias dockerm   "$env:ProgramFiles\Docker Toolbox\docker-machine.exe"
 Set-Alias ssh-add   "$env:ProgramFiles\Git\usr\bin\ssh-add.exe"
 Set-Alias ssh-agent "$env:ProgramFiles\Git\usr\bin\ssh-agent.exe"
-Set-Alias vpncli    '${env:ProgramFiles(x86)}\Cisco\Cisco AnyConnect Secure Mobility Client\vpncli.exe'
+Set-Alias vpncli    "${env:ProgramFiles(x86)}\Cisco\Cisco AnyConnect Secure Mobility Client\vpncli.exe"
 Set-Alias nuget     "$env:ProgramData\NuGet\nuget.exe"
 
 ########################################

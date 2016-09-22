@@ -38,6 +38,14 @@ inoremap jk <ESC>		" Map jk to ESC
 nnoremap <leader>e :NERDTreeToggle<CR>
 
 " =========================
+" GVIM Options
+" =========================
+set guioptions-=m	" Remove menu bar
+set guioptions-=T	" Remove toolbar
+set guioptions-=r	" Remove right-hand scroll bar
+set guioptions-=L	" Remove right-hand scroll bar
+
+" =========================
 " vim-go
 " =========================
 

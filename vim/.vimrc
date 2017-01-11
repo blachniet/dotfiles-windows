@@ -20,6 +20,7 @@ syntax enable
 set background=dark
 if has('gui_running')
 	colorscheme solarized
+	set guifont=Fixedsys:h12
 endif
 
 set incsearch			" Show next match while entering search

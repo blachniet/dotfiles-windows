@@ -11,6 +11,8 @@
 	diffy = difftool --dir-diff
 [push]
 	default = simple
+[pull]
+	ff = only
 [diff]
 	tool = bc3
 [difftool "bc3"]

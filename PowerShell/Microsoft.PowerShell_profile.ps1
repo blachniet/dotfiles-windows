@@ -8,6 +8,7 @@ Set-Alias ssh       'C:\Program Files\Git\usr\bin\ssh.exe'
 Set-Alias ssh-add   'C:\Program Files\Git\usr\bin\ssh-add.exe'
 Set-Alias ssh-agent 'C:\Program Files\Git\usr\bin\ssh-agent.exe'
 Set-Alias vpncli    'C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpncli.exe'
+Set-Alias meld      'C:\Program Files (x86)\Meld\Meld.exe'
 
 ########################################
 # Functions

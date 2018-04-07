@@ -29,21 +29,3 @@ Pop-Location
 $env:GOPATH = "$HOME\Developer\Go"
 $env:PATH += ";$env:GOPATH\bin"
 $env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"
-
-########################################
-# posh-git
-########################################
-if ((Get-Module -ListAvailable -Name posh-git) -ne $null){
-	Import-Module posh-git
-	function global:prompt {
-	    $realLASTEXITCODE = $LASTEXITCODE
-
-	    Write-Host($pwd.ProviderPath) -nonewline
-
-	    Write-VcsStatus
-
-	    $global:LASTEXITCODE = $realLASTEXITCODE
-	    return "> "
-	}
-	Start-SshAgent -Quiet
-}

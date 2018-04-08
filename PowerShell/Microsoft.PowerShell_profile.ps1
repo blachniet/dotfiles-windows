@@ -21,6 +21,19 @@ function Update-NuGet {
 	New-Item -Type Container -ErrorAction SilentlyContinue "$env:ProgramData\NuGet\"
 	Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" -OutFile "$env:ProgramData\NuGet\nuget.exe"
 }
+function upd {
+	param(
+		[Parameter(Position=0)]
+		[int] $Count = 1
+	)
+	if ($Count -gt 0) {
+		$target = "../"
+		for ($i = 1; $i -lt $Count; $i++) {
+			$target = Join-Path $target "../"
+		}
+		Push-Location $target
+	}
+}
 
 Push-Location (Split-Path -Parent $PROFILE)
 "extras" | ? {Test-Path "$_.ps1"} | % { iex ". .\$_.ps1"}

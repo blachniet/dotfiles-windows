@@ -39,6 +39,4 @@ Push-Location (Split-Path -Parent $PROFILE)
 "extras" | ? {Test-Path "$_.ps1"} | % { iex ". .\$_.ps1"}
 Pop-Location
 
-$env:GOPATH = "$HOME\Developer\Go"
-$env:PATH += ";$env:GOPATH\bin"
 $env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"

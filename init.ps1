@@ -138,3 +138,9 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Explorer: show file extensions by default (0: Show Extensions, 1: Hide Extensions)
 Write-Host "[Windows] Show file extensions" -ForegroundColor Green
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+
+##########
+# Windows PowerShell
+##########
+EnsureDir "$HOME\Documents\WindowsPowerShell"
+EnsureHardLink "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" "$PSScriptRoot\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"

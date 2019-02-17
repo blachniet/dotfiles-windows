@@ -1,8 +1,12 @@
 # Brian's Windows dotfiles
 
 ```powershell
-PS> New-Item -ItemType Directory ~/.config/dotfiles-windows
-PS> cd ~/.config/dotfiles-windows
+# Create the XDG configuration directory if it doesn't already exist
+PS> New-Item -ItemType Directory ~/.config/
+PS> cd ~/.config/
+
+# Clone this repo
+PS> git clone https://github.com/blachniet/dotfiles-windows.git
 
 # Review the contents of init.ps1 before running!
 PS> ./init.ps1

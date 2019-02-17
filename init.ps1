@@ -82,7 +82,7 @@ function EnsureHardLink {
 
     if ($null -eq $item) {
         New-Item -ItemType HardLink -Path $Path -Value $Value
-    } elseif (($item.LinkType -ne 'HardLink') -or ($item.Target -ne $Value)) {
+    } elseif (($item.LinkType -ne 'HardLink') -or ($Value -notin $item.Target)) {
         Write-Error ("Creating hard link failed because an item already exists at '$Path'." +
             " Remove the item at that path and try again.") 
     } else {

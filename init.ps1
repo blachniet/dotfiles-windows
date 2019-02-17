@@ -78,7 +78,7 @@ function EnsureHardLink {
 
     Write-Host "[HardLink] '$Path' --> '$Value'" -ForegroundColor Green
 
-    $item = Get-Item $Path
+    $item = Get-Item $Path -ErrorAction SilentlyContinue
 
     if ($null -eq $item) {
         New-Item -ItemType HardLink -Path $Path -Value $Value
@@ -153,4 +153,8 @@ EnsureHardLink "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.p
 EnsureDir "$HOME\Documents\PowerShell"
 EnsureHardLink "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$PSScriptRoot\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 
-
+##########
+# Visual Studio Code
+##########
+EnsureDir "$HOME\AppData\Roaming\Code\User"
+EnsureHardLink "$HOME\AppData\Roaming\Code\User\settings.json" "$PSScriptRoot\VisualStudioCode\settings.json"

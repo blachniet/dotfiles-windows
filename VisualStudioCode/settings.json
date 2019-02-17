@@ -1,0 +1,67 @@
+{
+    "breadcrumbs.enabled": true,
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        100
+    ],
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "leader",
+                "b"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.tasks.build",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.tasks.test",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "d"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.debug.start",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": false,
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "right"
+}

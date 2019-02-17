@@ -34,8 +34,37 @@ function upd {
 	}
 }
 
+function Get-AssemblyInfo {
+	param(
+		# Specifies a path to one or more locations.
+		[Parameter(Mandatory=$true,
+				   Position=0,
+				   ValueFromPipeline=$true,
+				   ValueFromPipelineByPropertyName=$true,
+				   HelpMessage="Path to one or more locations.")]
+		[Alias("PSPath")]
+		[ValidateNotNullOrEmpty()]
+		[string[]]
+		$Path
+	)
+
+	$Path | Get-ChildItem | ForEach-Object {
+		$assembly = [System.Reflection.Assembly]::ReflectionOnlyLoadFrom($_.FullName)
+		$customAttrs = [System.Reflection.CustomAttributeData]::GetCustomAttributes($assembly)
+
+		New-Object -TypeName PSObject -Property @{
+			# FileVersion = $_.VersionInfo.FileVersion
+			# ProductVersion = $_.VersionInfo.ProductVersion
+			# FullAssemblyName = $assembly.FullName
+			CustomAttributes = $customAttrs
+			Assembly = $assembly
+			VersionInfo = $_.VersionInfo
+		}
+	}
+}
+
 Push-Location (Split-Path -Parent $PROFILE)
-"extras" | ? {Test-Path "$_.ps1"} | % { iex ". .\$_.ps1"}
+"extras" | Where-Object {Test-Path "$_.ps1"} | ForEach-Object { Invoke-Expression ". .\$_.ps1"}
 Pop-Location
 
 $env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"

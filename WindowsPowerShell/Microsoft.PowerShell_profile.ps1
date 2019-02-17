@@ -14,9 +14,8 @@ Set-Alias meld      'C:\Program Files (x86)\Meld\Meld.exe'
 # Functions
 ########################################
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
-function touch($file) { "" | Out-File $file -Encoding ASCII }
-function mklink { cmd /c mklink $args }
-function rmrf($path) { rm -Recurse -Force $path }
+function touch($Path) { New-Item -ItemType File $Path }
+function rmrf($path) { Remove-Item -Recurse -Force $path }
 function Update-NuGet {
 	New-Item -Type Container -ErrorAction SilentlyContinue "$env:ProgramData\NuGet\"
 	Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" -OutFile "$env:ProgramData\NuGet\nuget.exe"

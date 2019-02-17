@@ -4,6 +4,11 @@
 $PROFILE_HOME = (Split-Path $PROFILE)
 
 ########################################
+# Modules
+########################################
+Import-Module posh-git
+
+########################################
 # Aliases
 ########################################
 Set-Alias dockerc   'C:\Program Files\Docker Toolbox\docker-compose.exe'
@@ -58,9 +63,6 @@ function Get-AssemblyInfo {
 		$customAttrs = [System.Reflection.CustomAttributeData]::GetCustomAttributes($assembly)
 
 		New-Object -TypeName PSObject -Property @{
-			# FileVersion = $_.VersionInfo.FileVersion
-			# ProductVersion = $_.VersionInfo.ProductVersion
-			# FullAssemblyName = $assembly.FullName
 			CustomAttributes = $customAttrs
 			Assembly = $assembly
 			VersionInfo = $_.VersionInfo
@@ -68,10 +70,24 @@ function Get-AssemblyInfo {
 	}
 }
 
-########################################
-# Modules
-########################################
-Import-Module posh-git
+function Test-DotfilesStatus {
+	Push-Location $env:DOTFILES_HOME
+	try {
+		if ((Get-GitStatus).HasWorking) {
+			Add-Type -AssemblyName System.Windows.Forms
+			$global:balloon = New-Object System.Windows.Forms.NotifyIcon
+			$path = (Get-Process -id $pid).Path
+			$balloon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($path)
+			$balloon.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Warning
+			$balloon.BalloonTipText = 'Your dotfiles have uncommitted changes!'
+			$balloon.BalloonTipTitle = "dotfiles-windows"
+			$balloon.Visible = $true
+			$balloon.ShowBalloonTip(5000)
+		}
+	} finally {
+		Pop-Location
+	}
+}
 
 ########################################
 # Local Customizations

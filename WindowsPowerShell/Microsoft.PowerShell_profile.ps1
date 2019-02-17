@@ -1,4 +1,9 @@
 ########################################
+# Variables
+########################################
+$PROFILE_HOME = (Split-Path $PROFILE)
+
+########################################
 # Aliases
 ########################################
 Set-Alias dockerc   'C:\Program Files\Docker Toolbox\docker-compose.exe'

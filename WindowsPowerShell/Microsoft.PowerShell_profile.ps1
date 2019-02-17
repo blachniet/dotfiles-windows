@@ -68,13 +68,16 @@ function Get-AssemblyInfo {
 	}
 }
 
-Push-Location (Split-Path -Parent $PROFILE)
-"extras" | Where-Object {Test-Path "$_.ps1"} | ForEach-Object { Invoke-Expression ". .\$_.ps1"}
-Pop-Location
-
-$env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"
-
 ########################################
 # Modules
 ########################################
 Import-Module posh-git
+
+########################################
+# Local Customizations
+# Generally, Microsoft.PowerShell_profile.local.ps1
+########################################
+$localProfile = Join-Path $PROFILE_HOME ((Get-Item $PROFILE).BaseName + ".local.ps1")
+if (Test-Path $localProfile) {
+    Invoke-Expression ". $localProfile"
+}

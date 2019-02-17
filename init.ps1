@@ -93,6 +93,11 @@ function EnsureHardLink {
 ##########
 # XDG
 ##########
+EnsureEnvironmentVariable "DOTFILES_HOME" "$PSScriptRoot"
+
+##########
+# XDG
+##########
 EnsureDir "$HOME\.local" -Hidden
 EnsureDir "$HOME\.local\share"
 EnsureEnvironmentVariable "XDG_DATA_HOME" "$HOME\.local\share"

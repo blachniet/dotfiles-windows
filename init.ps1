@@ -163,3 +163,8 @@ EnsureHardLink "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$P
 ##########
 EnsureDir "$HOME\AppData\Roaming\Code\User"
 EnsureHardLink "$HOME\AppData\Roaming\Code\User\settings.json" "$PSScriptRoot\VisualStudioCode\settings.json"
+
+##########
+# ConEmu
+##########
+EnsureHardLink "$HOME\AppData\Roaming\ConEmu.xml" "$PSScriptRoot\conemu\ConEmu.xml"

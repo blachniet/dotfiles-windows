@@ -144,3 +144,13 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advan
 ##########
 EnsureDir "$HOME\Documents\WindowsPowerShell"
 EnsureHardLink "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" "$PSScriptRoot\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+
+##########
+# PowerShell (pwsh)
+##########
+# I'm re-using the Windows PowerShell profile for PowerShell. This probably won't work
+# forever, but it's fine for now.
+EnsureDir "$HOME\Documents\PowerShell"
+EnsureHardLink "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$PSScriptRoot\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+
+

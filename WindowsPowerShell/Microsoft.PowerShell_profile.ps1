@@ -73,3 +73,8 @@ Push-Location (Split-Path -Parent $PROFILE)
 Pop-Location
 
 $env:PATH += ";$(Join-Path (Split-Path -Parent $PROFILE) 'Scripts')"
+
+########################################
+# Modules
+########################################
+Import-Module posh-git

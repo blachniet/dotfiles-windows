@@ -1,8 +1,9 @@
 # Brian's Windows dotfiles
 
-    PS> cd ~/
-    PS> git clone https://github.com/blachniet/dotfiles-windows.git
-    PS> cd dotfiles-windows
-    PS> ./stow.ps1 PowerShell
-    PS> ./stow.ps1 git
-    PS> ./stow.ps1 vim
+```powershell
+PS> New-Item -ItemType Directory ~/.config/dotfiles-windows
+PS> cd ~/.config/dotfiles-windows
+
+# Review the contents of init.ps1 before running!
+PS> ./init.ps1
+```

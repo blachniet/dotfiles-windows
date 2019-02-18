@@ -7,6 +7,7 @@
 	b = branch
 	lo = log --oneline --decorate --graph
 	diffy = difftool --dir-diff
+	ri = rebase --interactive --autosquash
 [push]
 	default = simple
 [pull]

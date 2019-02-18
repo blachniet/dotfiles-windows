@@ -16,6 +16,7 @@ PS> cd ~/.config/
 
 # Clone this repo
 PS> git clone https://github.com/blachniet/dotfiles-windows.git
+PS> cd ./dotfiles-windows/
 
 # Review the contents of ensure.ps1 before running!
 PS> ./ensure.ps1

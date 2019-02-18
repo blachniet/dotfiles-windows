@@ -79,7 +79,7 @@ function Test-DotfilesStatus {
 			$path = (Get-Process -id $pid).Path
 			$balloon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($path)
 			$balloon.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Warning
-			$balloon.BalloonTipText = 'Your dotfiles have uncommitted changes!'
+			$balloon.BalloonTipText = 'Your dotfiles have uncommitted changes.'
 			$balloon.BalloonTipTitle = "dotfiles-windows"
 			$balloon.Visible = $true
 			$balloon.ShowBalloonTip(5000)

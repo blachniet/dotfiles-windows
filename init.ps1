@@ -168,3 +168,16 @@ EnsureHardLink "$HOME\AppData\Roaming\Code\User\settings.json" "$PSScriptRoot\Vi
 # ConEmu
 ##########
 EnsureHardLink "$HOME\AppData\Roaming\ConEmu.xml" "$PSScriptRoot\conemu\ConEmu.xml"
+
+##########
+# Scheduled Task for Test-DotfilesStatus
+##########
+Write-Host "[ScheduledTask] Test-DotfilesStatus" -ForegroundColor Green
+if ($null -eq (Get-ScheduledTask 'Test-DotfilesStatus' -ErrorAction SilentlyContinue)) {
+    $action = New-ScheduledTaskAction 'powershell.exe' `
+        -Argument "-WindowStyle Hidden -Noninteractive -Command Test-DotfilesStatus"
+    $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+    $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable
+    Register-ScheduledTask -TaskName 'Test-DotfilesStatus' -TaskPath 'dotfiles-windows' `
+        -Action $action -Trigger $trigger -Settings $settings
+}

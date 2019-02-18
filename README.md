@@ -9,6 +9,8 @@
 
 ## Getting started
 
+Execute the following in **Windows PowerShell**. The `ensure.ps1` script uses some cmdlets that are not available in PowerShell Core.
+
 ```powershell
 # Create the XDG configuration directory if it doesn't already exist
 PS> New-Item -ItemType Directory ~/.config/
